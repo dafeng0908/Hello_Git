@@ -1,1 +1,3 @@
-git pull
+[1] git pull
+[2] git add
+[3] git commit
