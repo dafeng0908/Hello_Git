@@ -1,4 +1,4 @@
-
+user guide : how to use git
 
 create a new repository on the command line
 echo "# Hello_Git" >> README.md
