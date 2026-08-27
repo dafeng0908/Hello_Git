@@ -1,8 +1,19 @@
 @echo off
 setlocal
 
+git rev-parse --is-inside-work-tree >nul 2>&1
+if errorlevel 1 (
+    echo This folder is not a Git repository.
+    pause
+    exit /b 1
+)
+
 for /f "delims=" %%B in ('git branch --show-current 2^>nul') do set "BRANCH=%%B"
-if "%BRANCH%"=="" set "BRANCH=main"
+if "%BRANCH%"=="" (
+    echo Unable to detect current branch.
+    pause
+    exit /b 1
+)
 
 git status
 
